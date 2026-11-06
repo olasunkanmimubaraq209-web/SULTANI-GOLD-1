@@ -20,7 +20,7 @@ export interface ProductItem {
 }
 
 export const SULTANI_LOGO_PATH = '/assets/aistudio/Sultani_Gold_Monogram_Emblem_af041aa8.png';
-export const SULTANI_PACKAGING_PATH = '/assets/aistudio/SULTANI_PACKAGING_BAGS_d7d10395.jfif';
+export const SULTANI_PACKAGING_PATH = '/assets/aistudio/sultani_packaging_bags.jpg';
 export const SULTANI_RING_PATH = '/assets/aistudio/masculine_ring__reedit_8be5ba26.jpg';
 export const SULTANI_RING_PACK_PATH = '/assets/aistudio/sultani_gold_ring_in_box.jpg';
 
@@ -29,8 +29,8 @@ export const BRAND_ASSETS = {
   packagingBags: SULTANI_PACKAGING_PATH,
   emeraldRing: SULTANI_RING_PATH,
   ringPack: SULTANI_RING_PACK_PATH,
-  heroNecklace: '/src/assets/images/zinariya_hero_necklace_1792774928626.jpg',
-  bridalSet: '/src/assets/images/zinariya_bridal_set_1792774930556.jpg',
+  heroNecklace: '/assets/images/zinariya_hero_necklace_1792774928626.jpg',
+  bridalSet: '/assets/images/zinariya_bridal_set_1792774930556.jpg',
   bullionBars: '/assets/aistudio/sultani_24k_bullion.jpg'
 };
 
