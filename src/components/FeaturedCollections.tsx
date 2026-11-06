@@ -1,5 +1,5 @@
 import React from 'react';
-import { BRAND_ASSETS, SULTANI_RING_PATH, SULTANI_PACKAGING_PATH } from '../data/brandData.ts';
+import { BRAND_ASSETS, SULTANI_RING_PATH, SULTANI_RING_PACK_PATH, SULTANI_PACKAGING_PATH } from '../data/brandData.ts';
 import { ArrowRight, ShieldCheck, Gem, Landmark, Sparkles } from 'lucide-react';
 
 interface FeaturedCollectionsProps {
@@ -13,40 +13,40 @@ export const FeaturedCollections: React.FC<FeaturedCollectionsProps> = ({
 }) => {
   const collections = [
     {
-      id: 'bridal',
-      title: 'Royal Bridal Regalia',
-      category: 'Bridal',
-      subtitle: '21K & 22K Ceremonial Parures',
-      description: 'Filigree collars, cascading chandelier earrings, and heirloom dowry suites forged for palace weddings and traditional blessings.',
-      image: BRAND_ASSETS.bridalSet,
-      badge: 'Imperial Ceremonial'
-    },
-    {
-      id: 'rings',
-      title: 'Imperial Signets & Rings',
-      category: 'Fine Jewellery',
-      subtitle: '18K & 21K Masculine & Sovereign Rings',
-      description: 'Bold architectural signet rings centering deep green emerald-cut stones, hand-drawn wire domes, and stepped shoulders.',
+      id: 'everyday',
+      title: 'Everyday Elegance',
+      category: 'Everyday Luxury',
+      subtitle: 'Day to Evening Refinement',
+      description: 'Refined pieces that move easily from day to evening.',
       image: SULTANI_RING_PATH,
-      badge: 'Bespoke Atelier'
+      badge: 'Everyday Luxury'
     },
     {
-      id: 'bullion',
-      title: 'Minted Investment Bullion',
-      category: 'Bullion',
-      subtitle: '24K (999.9) Pure Physical Gold',
-      description: 'LBMA-standard fine investment bars and hand-poured ingots with tamper-evident security assay packaging.',
-      image: BRAND_ASSETS.bullionBars,
-      badge: '999.9 Pure Gold'
+      id: 'bridal',
+      title: 'Bridal & Celebration',
+      category: 'Bridal',
+      subtitle: 'Weddings & Milestone Occasions',
+      description: 'Dignified, contemporary designs for weddings and milestone occasions.',
+      image: BRAND_ASSETS.bridalSet,
+      badge: 'Bridal & Celebration'
     },
     {
-      id: 'packaging',
-      title: 'The Sovereign Unboxing',
+      id: 'gifts',
+      title: 'Gifts Worth Giving',
+      category: 'Fine Jewellery',
+      subtitle: 'Anniversaries & Celebrations',
+      description: 'Thoughtful choices for anniversaries, birthdays and special thank-yous.',
+      image: SULTANI_RING_PACK_PATH,
+      badge: 'Gifts Worth Giving'
+    },
+    {
+      id: 'new-arrivals',
+      title: 'New Arrivals',
       category: 'All',
-      subtitle: 'Official Sultani Gold Suites',
-      description: 'Custom emerald & gold foil presentation bags, velvet ring caskets, and wax-sealed archival assay certificates.',
-      image: SULTANI_PACKAGING_PATH,
-      badge: 'Signature Presentation'
+      subtitle: 'Freshly Presented Editions',
+      description: 'Our latest designs, freshly presented.',
+      image: BRAND_ASSETS.heroNecklace,
+      badge: 'New Arrivals'
     }
   ];
 
@@ -57,13 +57,13 @@ export const FeaturedCollections: React.FC<FeaturedCollectionsProps> = ({
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
           <div className="space-y-2 max-w-xl">
             <span className="text-xs font-sans-luxe uppercase tracking-[0.25em] text-[#C6A15B] font-semibold">
-              Curated Ateliers
+              Collections
             </span>
             <h2 className="font-display text-3xl sm:text-4xl text-[#F7F3EA] font-semibold tracking-tight">
-              Four Pillars of Sovereign Gold
+              Find Your Piece
             </h2>
             <p className="font-serif-luxe text-base text-[#C4B7A5] italic">
-              From ceremonial bridal adornment to institutional capital preservation, discover creations worthy of the Sultanate.
+              From everyday quiet confidence to grand milestone celebrations, explore jewellery crafted for your story.
             </p>
           </div>
 
@@ -71,7 +71,7 @@ export const FeaturedCollections: React.FC<FeaturedCollectionsProps> = ({
             onClick={onExploreAll}
             className="text-xs font-sans-luxe uppercase tracking-[0.16em] text-[#C6A15B] hover:text-[#F7F3EA] font-semibold flex items-center gap-2 group cursor-pointer pb-1"
           >
-            <span>View Complete Catalog</span>
+            <span>View All Collections</span>
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </button>
         </div>

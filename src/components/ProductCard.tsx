@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { ProductItem } from '../data/brandData.ts';
-import { Eye, ShoppingBag, Check } from 'lucide-react';
+import { Eye, ShoppingBag, Check, MessageCircle } from 'lucide-react';
 
 interface ProductCardProps {
   product: ProductItem;
@@ -28,6 +28,10 @@ export const ProductCard: React.FC<ProductCardProps> = ({
     setIsAdded(true);
     setTimeout(() => setIsAdded(false), 1800);
   };
+
+  const whatsappEnquireUrl = `https://wa.me/2349087858264?text=${encodeURIComponent(
+    `Hello Sultani Gold, I would like to enquire about ${product.title} (${product.karat}, ${product.weightGrams}g, ${formattedPrice}). Is it currently available?`
+  )}`;
 
   return (
     <div
@@ -84,7 +88,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
       {/* Card Content & Metadata */}
       <div className="p-4 flex flex-col flex-grow justify-between bg-[#151311]">
         <div>
-          {/* Clean Unboxed Metadata (Zero-Pill Rule) */}
+          {/* Clean Unboxed Metadata: Name, Karat, Weight */}
           <div className="flex items-center gap-2 text-[11px] font-sans-luxe uppercase tracking-wider text-[#C6A15B] font-medium">
             <span>{product.karat} Solid Gold</span>
             <span aria-hidden="true" className="text-stone-600">·</span>
@@ -101,12 +105,23 @@ export const ProductCard: React.FC<ProductCardProps> = ({
         </div>
 
         <div className="mt-4 pt-3 border-t border-[#C6A15B]/15 flex items-center justify-between">
-          <span className="font-mono text-sm font-bold text-[#E5D5B8] tabular-nums">
-            {formattedPrice}
-          </span>
-          <span className="text-[10px] font-sans-luxe uppercase tracking-wider text-[#A89E90]">
-            In Stock
-          </span>
+          <div>
+            <span className="font-mono text-sm font-bold text-[#E5D5B8] tabular-nums block">
+              {formattedPrice}
+            </span>
+          </div>
+
+          <a
+            href={whatsappEnquireUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={(e) => e.stopPropagation()}
+            className="inline-flex items-center gap-1 text-[11px] font-sans-luxe uppercase tracking-wider text-[#C6A15B] hover:text-[#F7F3EA] transition-colors"
+            title="Enquire on WhatsApp"
+          >
+            <MessageCircle className="w-3.5 h-3.5 text-emerald-400" />
+            <span>Enquire</span>
+          </a>
         </div>
       </div>
     </div>

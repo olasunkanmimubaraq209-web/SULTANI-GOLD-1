@@ -23,17 +23,17 @@ export const Hero: React.FC<HeroProps> = ({
           {/* Left Editorial Narrative Column */}
           <div className="lg:col-span-7 space-y-6">
             <div className="flex items-center gap-2 text-xs font-sans-luxe uppercase tracking-[0.28em] text-[#C6A15B]">
-              <span>Northern Nigerian Royal Metallurgy</span>
+              <span>Haute Joaillerie & Royal Gold</span>
               <span aria-hidden="true" className="text-stone-600">·</span>
-              <span>Imperial Editions</span>
+              <span>Moments Worth Keeping</span>
             </div>
 
-            <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-normal tracking-tight text-[#F7F3EA] leading-[1.12]">
-              The Sovereign Standard of <span className="text-[#C6A15B] font-semibold">Royal Gold</span>
+            <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-normal tracking-tight text-[#F7F3EA] leading-[1.14]">
+              Elegance That <span className="text-[#C6A15B] font-semibold">Stays With You</span>
             </h1>
 
             <p className="font-serif-luxe text-lg sm:text-xl text-[#D8CEBF] max-w-2xl leading-relaxed italic">
-              "Woven in heritage, forged in sovereign majesty." Certified 18-karat to 24-karat fine jewellery, imperial bridal parures, and LBMA-grade investment bullion crafted with centuries of Hausa royal court artistry.
+              Gold jewellery crafted for the moments worth keeping: weddings, celebrations, gifts and everyday style.
             </p>
 
             <div className="pt-2 flex flex-wrap items-center gap-4">
@@ -41,16 +41,18 @@ export const Hero: React.FC<HeroProps> = ({
                 onClick={onExploreCollections}
                 className="px-7 py-3.5 bg-[#C6A15B] hover:bg-[#B38D46] text-[#11100E] font-sans-luxe font-semibold text-xs tracking-[0.18em] uppercase rounded-sm transition-all duration-200 flex items-center gap-2.5 shadow-md cursor-pointer group"
               >
-                <span>Explore The Collections</span>
+                <span>Explore the Collection</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </button>
 
-              <button
-                onClick={onBookViewing}
-                className="px-6 py-3.5 bg-transparent hover:bg-white/5 text-[#EADFC9] border border-[#C6A15B]/50 hover:border-[#C6A15B] font-sans-luxe font-medium text-xs tracking-[0.18em] uppercase rounded-sm transition-all duration-200 flex items-center gap-2 cursor-pointer"
+              <a
+                href="https://wa.me/2349087858264?text=Hello%20Sultani%20Gold%2C%20I%20would%20like%20to%20enquire%20about%20your%20gold%20jewellery%20collection."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-6 py-3.5 bg-[#0D3B2E]/80 hover:bg-[#0D3B2E] text-emerald-100 border border-emerald-500/40 hover:border-emerald-400 font-sans-luxe font-medium text-xs tracking-[0.18em] uppercase rounded-sm transition-all duration-200 flex items-center gap-2 cursor-pointer shadow-sm"
               >
-                <span>Book Private Viewing</span>
-              </button>
+                <span>Enquire on WhatsApp</span>
+              </a>
             </div>
 
             {/* 3 Sovereign Trust Pillars */}

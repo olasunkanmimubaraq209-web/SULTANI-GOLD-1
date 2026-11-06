@@ -1,13 +1,18 @@
 import React, { useState } from 'react';
 import { SULTANI_LOGO_PATH } from '../data/brandData.ts';
-import { ShieldCheck, Lock, Check } from 'lucide-react';
+import { ShieldCheck, Phone, Mail, MessageCircle, Instagram, Clock, MapPin, Check } from 'lucide-react';
 
 interface FooterProps {
   onNavigate: (page: 'home' | 'shop' | 'about' | 'craftsmanship' | 'contact') => void;
   onOpenPolicy: (type: 'authenticity' | 'shipping' | 'returns') => void;
+  onOpenGoldGuide?: () => void;
 }
 
-export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenPolicy }) => {
+export const Footer: React.FC<FooterProps> = ({
+  onNavigate,
+  onOpenPolicy,
+  onOpenGoldGuide
+}) => {
   const [newsletterEmail, setNewsletterEmail] = useState('');
   const [isSubscribed, setIsSubscribed] = useState(false);
 
@@ -23,7 +28,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenPolicy }) => {
       <div className="max-w-7xl mx-auto space-y-12">
         {/* Top 4-Column Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10">
-          {/* Col 1: Brand Anchor */}
+          {/* Col 1: Brand Anchor & Tagline */}
           <div className="lg:col-span-4 space-y-4">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 rounded bg-[#1B1815] p-1 border border-[#C6A15B]/40 flex items-center justify-center">
@@ -37,31 +42,33 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenPolicy }) => {
                 <span className="font-display text-lg font-bold tracking-[0.2em] text-[#F7F3EA] uppercase block leading-none">
                   SULTANI GOLD
                 </span>
-                <span className="font-sans-luxe text-[9px] tracking-[0.26em] uppercase text-[#C6A15B] mt-0.5 block">
-                  The Sovereign Standard
+                <span className="font-sans-luxe text-[10px] tracking-[0.2em] uppercase text-[#C6A15B] mt-0.5 block font-medium">
+                  Regal Elegance. Lasting Value.
                 </span>
               </div>
             </div>
 
             <p className="font-serif-luxe text-sm text-[#A89E90] italic leading-relaxed max-w-sm">
-              Rooted in Northern Nigerian royal court heritage, hand-forged by generational Makera goldsmiths, and certified with peerless metallurgical assay standards.
+              Gold jewellery crafted for the moments worth keeping: weddings, celebrations, gifts and everyday style.
             </p>
 
-            <div className="flex items-center gap-4 text-xs font-sans-luxe text-[#C6A15B] pt-1">
-              <span>Abuja</span>
-              <span aria-hidden="true" className="text-stone-700">·</span>
-              <span>Kano</span>
-              <span aria-hidden="true" className="text-stone-700">·</span>
-              <span>Lagos</span>
-              <span aria-hidden="true" className="text-stone-700">·</span>
-              <span>Dubai Liaison</span>
+            {/* Address & Hours */}
+            <div className="space-y-1.5 text-xs font-sans-luxe text-[#B8AE9F] pt-2">
+              <div className="flex items-start gap-2">
+                <MapPin className="w-3.5 h-3.5 text-[#C6A15B] shrink-0 mt-0.5" />
+                <span>Maitama Diplomatic Quarter, Abuja & Victoria Island, Lagos</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Clock className="w-3.5 h-3.5 text-[#C6A15B] shrink-0" />
+                <span>Mon – Sat: 10:00 AM – 7:00 PM</span>
+              </div>
             </div>
           </div>
 
           {/* Col 2: The Collections */}
           <div className="lg:col-span-3 space-y-3">
             <span className="text-xs font-sans-luxe uppercase tracking-[0.2em] text-[#C6A15B] font-semibold block">
-              The Collections
+              Collections
             </span>
             <ul className="space-y-2 text-xs font-sans-luxe text-[#B8AE9F]">
               <li>
@@ -69,7 +76,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenPolicy }) => {
                   onClick={() => onNavigate('shop')}
                   className="hover:text-[#F7F3EA] transition-colors cursor-pointer text-left"
                 >
-                  Royal Bridal Regalia (21K & 22K)
+                  Everyday Elegance
                 </button>
               </li>
               <li>
@@ -77,7 +84,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenPolicy }) => {
                   onClick={() => onNavigate('shop')}
                   className="hover:text-[#F7F3EA] transition-colors cursor-pointer text-left"
                 >
-                  Imperial Signets & Emerald Rings
+                  Bridal & Celebration
                 </button>
               </li>
               <li>
@@ -85,7 +92,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenPolicy }) => {
                   onClick={() => onNavigate('shop')}
                   className="hover:text-[#F7F3EA] transition-colors cursor-pointer text-left"
                 >
-                  Minted 24K (999.9) Investment Bullion
+                  Gifts Worth Giving
                 </button>
               </li>
               <li>
@@ -93,48 +100,48 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenPolicy }) => {
                   onClick={() => onNavigate('shop')}
                   className="hover:text-[#F7F3EA] transition-colors cursor-pointer text-left"
                 >
-                  Everyday Sahelian Gold Torcs
+                  New Arrivals
                 </button>
               </li>
               <li>
                 <button
-                  onClick={() => onNavigate('craftsmanship')}
+                  onClick={() => onNavigate('shop')}
                   className="hover:text-[#F7F3EA] transition-colors cursor-pointer text-left text-[#C6A15B]"
                 >
-                  The Makera Guild Story
+                  View All Collections
                 </button>
               </li>
             </ul>
           </div>
 
-          {/* Col 3: Client Care & Assurances */}
+          {/* Col 3: Quick Links & Guidance */}
           <div className="lg:col-span-2 space-y-3">
             <span className="text-xs font-sans-luxe uppercase tracking-[0.2em] text-[#C6A15B] font-semibold block">
-              Assurances
+              Links
             </span>
             <ul className="space-y-2 text-xs font-sans-luxe text-[#B8AE9F]">
               <li>
                 <button
-                  onClick={() => onOpenPolicy('authenticity')}
+                  onClick={() => onNavigate('about')}
                   className="hover:text-[#F7F3EA] transition-colors cursor-pointer text-left"
                 >
-                  Assay & Authenticity
+                  About
                 </button>
               </li>
               <li>
                 <button
-                  onClick={() => onOpenPolicy('shipping')}
+                  onClick={() => onNavigate('shop')}
                   className="hover:text-[#F7F3EA] transition-colors cursor-pointer text-left"
                 >
-                  Armored Courier Transit
+                  Collections
                 </button>
               </li>
               <li>
                 <button
-                  onClick={() => onOpenPolicy('returns')}
-                  className="hover:text-[#F7F3EA] transition-colors cursor-pointer text-left"
+                  onClick={onOpenGoldGuide}
+                  className="hover:text-[#F7F3EA] transition-colors cursor-pointer text-left text-[#C6A15B] font-medium"
                 >
-                  Lifetime Buyback Covenant
+                  Gold Guide
                 </button>
               </li>
               <li>
@@ -142,64 +149,91 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenPolicy }) => {
                   onClick={() => onNavigate('contact')}
                   className="hover:text-[#F7F3EA] transition-colors cursor-pointer text-left"
                 >
-                  VIP Viewing Booking
+                  Contact
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => onOpenPolicy('shipping')}
+                  className="hover:text-[#F7F3EA] transition-colors cursor-pointer text-left"
+                >
+                  Delivery & Care
                 </button>
               </li>
             </ul>
           </div>
 
-          {/* Col 4: Private Client Gazette Newsletter */}
+          {/* Col 4: Direct Contact & Concierge */}
           <div className="lg:col-span-3 space-y-3">
             <span className="text-xs font-sans-luxe uppercase tracking-[0.2em] text-[#C6A15B] font-semibold block">
-              Private Client Salon
+              Contact Us
             </span>
-            <p className="text-xs font-sans-luxe text-[#9E9385] leading-relaxed">
-              Receive confidential dispatches on limited-edition minted ingot releases, royal bridal parures, and private viewings.
-            </p>
+            <ul className="space-y-2 text-xs font-sans-luxe text-[#B8AE9F]">
+              <li>
+                <a
+                  href="tel:+2349087858264"
+                  className="hover:text-[#F7F3EA] transition-colors flex items-center gap-2"
+                >
+                  <Phone className="w-3.5 h-3.5 text-[#C6A15B]" />
+                  <span>+234 (0) 908 785 8264</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="mailto:concierge@sultanigold.com"
+                  className="hover:text-[#F7F3EA] transition-colors flex items-center gap-2"
+                >
+                  <Mail className="w-3.5 h-3.5 text-[#C6A15B]" />
+                  <span>concierge@sultanigold.com</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://wa.me/2349087858264?text=Hello%20Sultani%20Gold%2C%20I%20would%20like%20to%20enquire%20about%20your%20jewellery%20collection."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-emerald-400 transition-colors flex items-center gap-2 text-emerald-300"
+                >
+                  <MessageCircle className="w-3.5 h-3.5 text-emerald-400" />
+                  <span>WhatsApp: +234 908 785 8264</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://instagram.com/sultanigold"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-[#F7F3EA] transition-colors flex items-center gap-2"
+                >
+                  <Instagram className="w-3.5 h-3.5 text-[#C6A15B]" />
+                  <span>Instagram: @sultanigold</span>
+                </a>
+              </li>
+            </ul>
 
-            {isSubscribed ? (
-              <div className="p-3 rounded bg-[#161411] border border-emerald-500/40 text-xs text-emerald-300 flex items-center gap-2">
-                <Check className="w-4 h-4 text-emerald-400 shrink-0" />
-                <span>You have been inscribed into the Sultani Private Salon.</span>
-              </div>
-            ) : (
-              <form onSubmit={handleSubscribe} className="space-y-2">
-                <div className="flex">
-                  <input
-                    type="email"
-                    required
-                    placeholder="Enter confidential email..."
-                    value={newsletterEmail}
-                    onChange={(e) => setNewsletterEmail(e.target.value)}
-                    className="flex-1 px-3 py-2 rounded-l bg-[#161411] border border-[#C6A15B]/30 focus:border-[#C6A15B] text-xs font-sans-luxe text-[#F7F3EA] placeholder-stone-500 focus:outline-none"
-                  />
-                  <button
-                    type="submit"
-                    className="px-3.5 py-2 bg-[#C6A15B] hover:bg-[#B38D46] text-[#11100E] text-xs font-sans-luxe font-semibold uppercase tracking-wider rounded-r transition-colors cursor-pointer shrink-0"
-                  >
-                    Join
-                  </button>
-                </div>
-                <span className="text-[10px] text-stone-500 block">
-                  Strict privacy protocol. Unsubscribe at any time.
-                </span>
-              </form>
-            )}
+            <div className="pt-2">
+              <button
+                onClick={() => onNavigate('contact')}
+                className="w-full py-2 px-3 bg-[#1B1815] hover:bg-[#23201C] border border-[#C6A15B]/30 hover:border-[#C6A15B] text-[11px] font-sans-luxe uppercase tracking-wider text-[#E5D5B8] rounded transition-colors text-center cursor-pointer"
+              >
+                Book Private Viewing
+              </button>
+            </div>
           </div>
         </div>
 
         {/* Bottom Bar: Copyright & Hallmarking Disclosures */}
         <div className="pt-8 border-t border-[#C6A15B]/15 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] font-sans-luxe text-[#7A7266]">
           <div>
-            © {new Date().getFullYear()} SULTANI GOLD MAISON D'OR. All rights reserved.
+            © Sultani Gold. All rights reserved.
           </div>
           <div className="flex items-center gap-3">
             <span className="flex items-center gap-1.5">
               <ShieldCheck className="w-3.5 h-3.5 text-[#C6A15B]" />
-              <span>Certified Hausa Guild Metallurgy</span>
+              <span>Certified Hallmark & Purity Assurance</span>
             </span>
             <span aria-hidden="true">·</span>
-            <span>LBMA Grade Bullion</span>
+            <span>Regal Elegance. Lasting Value.</span>
           </div>
         </div>
       </div>
